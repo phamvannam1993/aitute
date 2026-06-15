@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+    # Web Server Service
+    nginx_learn_en:
+        image: nginx:alpine
+        container_name: nginx_ai_wow
+        ports:
+            - "8016:80"
+        volumes:
+            - ./:/var/www/html
+            - ./docker/nginx/conf.d:/etc/nginx/conf.d/
+        networks:
+            - photos
+
+    db-ai_wow:
+        platform: linux/amd64
+        image: mysql:8.0
+        container_name: db-ai_wow
+        environment:
+            MYSQL_DATABASE: dev_db_ai_wow
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: user29
+            MYSQL_PASSWORD: user29
+            TZ: 'Asia/Tokyo'
+        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        volumes:
+            - dbdata:/var/lib/mysql
+        ports:
+            - 53460:3306
+        networks:
+            - photos
+
+    # Application Service
+    app-ai_wow:
+        container_name: app-ai_wow
+        build:
+            context: ./docker/php-fpm
+            dockerfile: Dockerfile
+        volumes:
+            - ./:/var/www/html/
+        ports:
+            - "9001:9000"
+        working_dir: /var/www/html/
+        networks:
+            - photos
+#Docker Networks
+networks:
+    photos:
+        driver: bridge
+volumes:
+    dbdata:
+        driver: local

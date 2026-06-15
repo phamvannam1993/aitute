@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/SVN-Gilroy Light.otf") format("opentype");
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/SVN-Gilroy Medium.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/SVN-Gilroy SemiBold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/SVN-Gilroy Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+.sun-editor-editable {
+    font-size: 20px !important;
+}
+
+body {
+    font-family: "Gilroy", sans-serif;
+}

@@ -1,0 +1,33 @@
+.dp__input {
+  border-radius: 30px;
+}
+
+.dp__active_date {
+  background-color: #FFA411;
+}
+
+.dp__today {
+  border: 1px solid #FFA411;
+}
+
+.dp__overlay_cell_active {
+  background: #FFA411;
+}
+
+.fc .fc-daygrid-day-frame{
+  height: 200px;
+  overflow: auto;
+}
+
+@media (min-width: 360px) {
+  .dp__input {
+    font-size: 10px;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .dp__input {
+    font-size: 14px;
+  }
+}

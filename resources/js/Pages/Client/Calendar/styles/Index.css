@@ -1,0 +1,351 @@
+
+
+.fc-toolbar-chunk div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fc-toolbar-title {
+    margin: 0 15px;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    text-align: center;
+
+}
+
+.fc-prev-button {
+    margin-right: 10px;
+    border: none !important;
+    width: 32px !important;
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
+    align-items: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    line-height: 1.5714285714285714 !important;
+    height: 32px !important;
+    padding: 4px 15px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    color: rgba(0, 0, 0, 0.88) !important;
+}
+
+.fc-next-button {
+    margin-left: 10px;
+    border: none !important;
+    width: 32px !important;
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
+    align-items: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    line-height: 1.5714285714285714 !important;
+    height: 32px !important;
+    padding: 4px 15px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    color: rgba(0, 0, 0, 0.88) !important;
+}
+
+.fc-today-button {
+    text-transform: capitalize !important;
+    height: 32px !important;
+    padding: 5px 16px !important;
+    background: #ffffff !important;
+    border-color: #d9d9d9 !important;
+    color: rgba(0, 0, 0, 0.88) !important;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02) !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+}
+
+.fc-today-button:hover {
+    border-color: #4096ff !important;
+    color: #4096ff !important;
+}
+
+.fc-button-group {
+    background-color: #f5f6f7 !important;
+    padding: 2px !important;
+    color: rgba(0, 0, 0, 0.65) !important;
+    font-size: 14px !important;
+    line-height: 1.5714285714285714 !important;
+    border-radius: 6px !important;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+.fc-dayGridMonth-button {
+    text-transform: capitalize !important;
+    background-color: #f5f6f7 !important;
+    color: rgba(0, 0, 0, 0.65) !important;
+    min-height: 28px !important;
+    line-height: 28px !important;
+    padding: 0 11px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    border: none !important;
+    cursor: pointer !important;
+
+}
+
+.fc-dayGridWeek-button {
+    text-transform: capitalize !important;
+    background-color: #f5f6f7 !important;
+    color: rgba(0, 0, 0, 0.65) !important;
+    min-height: 28px !important;
+    line-height: 28px !important;
+    padding: 0 11px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    border: none !important;
+    cursor: pointer !important;
+
+}
+
+.fc-button-primary:focus {
+    box-shadow: none !important;
+}
+
+.fc-button-active {
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0rgba(0, 0, 0, 0.02) !important;
+    color: #232426 !important;
+    border-radius: 4px !important;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+.fc-day {
+    position: relative !important;
+}
+
+.new-post-btn {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    top: 100% !important;
+    transform: translate(-50%, calc(-100% - 10px));
+    background-color: #fff;
+    color: #999;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 90%;
+    height: 20%;
+    border: 1px dashed #d4d4d4;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    /* padding: 8px 0px; */
+}
+
+.new-post-btn .icon-size {
+    width: 16px;
+    height: 16px;
+}
+
+.fc-day:hover .new-post-btn {
+    display: flex;
+}
+
+.new-post-btn:hover {
+    border-color: #26cf7a;
+    color: #26cf7a;
+}
+
+.fc-day.fc-day-past {
+    background-color: #f9f9f9 !important;
+}
+
+.fc .fc-button{
+    height: auto !important;
+}
+
+
+::v-deep( .fc-today-button) {
+    display: none !important;
+  }
+
+  ::v-deep(.fc-toolbar .fc-toolbar-chunk:nth-of-type(2)) {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 999px; 
+    padding: 10px 10px; 
+    box-shadow: inset 0px 2px 2.6px 1px #00000025;
+  }
+
+  ::v-deep(.fc-toolbar .fc-toolbar-chunk:nth-of-type(2) .fc-prev-button,
+          .fc-toolbar .fc-toolbar-chunk:nth-of-type(2) .fc-next-button) {
+    font-size: 16px; 
+    margin: 0 10px; 
+    cursor: pointer;
+  }
+
+  ::v-deep(.fc-toolbar .fc-toolbar-chunk:nth-of-type(2) .fc-prev-button:hover,
+          .fc-toolbar .fc-toolbar-chunk:nth-of-type(2) .fc-next-button:hover) {
+    color: #555; /* Change color slightly on hover */
+  }
+
+  ::v-deep(.fc-toolbar .fc-toolbar-chunk:nth-of-type(2) span) {
+    font-weight: bold; /* Bold text for date range */
+    font-size: 14px; /* Consistent text size */
+  }
+  
+  ::v-deep(.fc-toolbar-chunk:nth-of-type(3)) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 999px;
+    padding: 12px 5px;
+    box-shadow: inset 0px 2px 2.6px 1px #00000025;
+    width: fit-content;
+  }
+
+  ::v-deep(.fc-toolbar-chunk:nth-of-type(3) .toggle-button) {
+    flex: 1;
+    text-align: center;
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  ::v-deep(.fc-toolbar-chunk:nth-of-type(3) .fc-button-active) {
+    border-radius: 999px !important;
+    box-shadow: 0px 2px 2.6px 1px #00000025;
+  }
+  ::v-deep(.fc-toolbar-chunk:nth-of-type(3) .fc-button-group) {
+    background-color: #ffffff00 !important;
+  }
+  ::v-deep(.fc-scrollgrid) {
+    border: none !important;
+  }
+  ::v-deep(.fc-theme-standard th) {
+    border: none !important;
+  }
+  ::v-deep(.fc-theme-standard td) {
+    border: none !important;
+    padding: 4px;
+  }
+  ::v-deep(.fc-col-header-cell .fc-scrollgrid-sync-inner) {
+    border: 1px solid #fff;
+    padding: 0 4px;
+    border-radius: 24px;
+    box-shadow: inset 0px 2px 2.6px 1px #00000025;
+
+  }
+  ::v-deep(.fc-daygrid-day-frame) {
+    border: 2px solid #d4d4d4;
+    padding: 2px;
+    border-radius: 24px;
+  }
+  ::v-deep(.fc-highlight) {
+    background-color: var(--fc-today-bg-color);
+    border-radius: 24px;
+  }
+  ::v-deep(.fc .fc-daygrid-day.fc-day-today) {
+    background-color: #ffffff00;
+  }
+
+  ::v-deep(.fc-day-today .fc-daygrid-day-frame) {
+    background-color: #ffe7c3;
+    font-weight: bold; 
+    color: #ff9800; 
+  }
+  ::v-deep(.fc-day-today .fc-daygrid-day-number) {
+    
+    color: #fff; 
+    background-color: #ff9800; 
+    border-radius: 999px;
+  }
+  ::v-deep(.fc .fc-daygrid-day-number) {
+    padding: 1px;
+  }
+  
+  @media (max-width: 698px) {
+    ::v-deep(.fc-col-header-cell-cushion, .fc .fc-daygrid-day-number) {
+      font-size: 10px !important;
+    }
+    ::v-deep(.fc-daygrid-day-top) {
+      justify-content: center;
+    }
+  }
+  @media (min-width: 698px) {
+    ::v-deep(.fc-col-header-cell) {
+      border: none;
+      padding: 0 4px;
+    }
+    ::v-deep(.fc-toolbar) {
+      position: relative;
+      justify-content: center;
+    }
+    ::v-deep(.fc-toolbar-chunk:nth-of-type(3)) {
+      position: absolute;
+      right: 0;
+    }
+    ::v-deep(.fc-daygrid-day-top) {
+      padding-right: 4px;
+      padding-top: 4px;
+    }
+    ::v-deep(.fc .fc-daygrid-day-number) {
+      padding: 4px;
+    }
+  }
+
+@media (max-width: 768px) {
+    .fc-toolbar-title {
+        font-size: 12px !important;
+    }
+
+    .new-post-btn {
+        font-size: 10px;
+    }
+
+    .fc-prev-button,
+    .fc-next-button {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 12px !important;
+    }
+
+    .fc-today-button {
+        height: 28px !important;
+        font-size: 12px !important;
+    }
+
+    .fc-dayGridWeek-button,
+    .fc-dayGridMonth-button {
+        height: 28px !important;
+        font-size: 12px !important;
+    }
+}
+
+.event-text-red {
+    color: red;
+}
+
+.event-text-green {
+    color: green;
+}
+
+.event-text-blue {
+    color: blue;
+}
+
+.event-text-yellow {
+    color: orange;
+}
