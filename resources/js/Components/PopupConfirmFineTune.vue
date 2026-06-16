@@ -44,7 +44,8 @@ const trainingImagePopup = ref(false);
 const emit = defineEmits();
 
 const closePopup = () => {
-    emit("close");
+    // "Bỏ qua": vào thẳng trang Thương hiệu cá nhân, không bắt đào tạo mẫu
+    window.location.href = route("ai-image.my-ai-image");
 };
 
 const redirectToMyAIIMage = () => {
