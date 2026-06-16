@@ -24,7 +24,6 @@
         "maatwebsite/excel": "^3.1",
         "mavinoo/laravel-batch": "^2.4",
         "modelflow-ai/anthropic": "^0.2.0",
-        "mozex/anthropic-php": "^1.0",
         "openai-php/client": "^0.10.1",
         "openai-php/laravel": "^0.10.2",
         "php-ffmpeg/php-ffmpeg": "^1.2",
