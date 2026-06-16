@@ -790,10 +790,10 @@ class AIImageController extends Controller
         // GPT Image 2 yêu cầu size là bội số của 16. Map theo tỉ lệ khung hình.
         switch ($aspect_ratio) {
             case '16:9':
-                $size = '2048x1152';
+                $size = '1280x720';
                 break;
             case '9:16':
-                $size = '1152x2048';
+                $size = '720x1280';
                 break;
             default:
                 $size = '1024x1024';
@@ -804,7 +804,7 @@ class AIImageController extends Controller
             'model' => config('openai.image_model'),
             'prompt' => $prompt,
             'size' => $size,
-            'quality' => 'high',
+            'quality' => 'medium',
             'n' => 1,
         ];
 
@@ -814,7 +814,7 @@ class AIImageController extends Controller
             $response = Http::withHeaders([
                 'Authorization' => 'Bearer ' . config('openai.api_key'),
                 'Content-Type' => 'application/json',
-            ])->timeout(120)->post(config('openai.image_url'), $requestData);
+            ])->timeout(180)->post(config('openai.image_url'), $requestData);
 
             if ($response->failed()) {
                 Log::error('OpenAI GPT Image API error:', $response->json() ?? []);
