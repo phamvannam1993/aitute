@@ -130,7 +130,8 @@ class AIImageController extends Controller
                     $imageContent = $this->generateAestheticImage($prompt, $width, $height, $aspect_ratio);
                     break;
                 case 'GPT Image':
-                    $imageContent = $this->generateImageOpenAI($prompt, $aspect_ratio);
+                    // Dùng mô tả tiếng Việt gốc (không dịch sang tiếng Anh) để chữ trong ảnh là tiếng Việt
+                    $imageContent = $this->generateImageOpenAI($description, $aspect_ratio);
                     break;
                 default:
                     $imageContent = $this->generateImageReplicate($prompt, $width, $height, $aspect_ratio);
@@ -800,9 +801,12 @@ class AIImageController extends Controller
                 break;
         }
 
+        // Buộc mọi chữ/văn bản trong ảnh phải là tiếng Việt có dấu, đúng chính tả
+        $finalPrompt = $prompt . "\n\nYêu cầu quan trọng: Nếu trong ảnh có bất kỳ chữ viết, biển hiệu, tiêu đề, nhãn hay văn bản nào, tất cả PHẢI được viết bằng tiếng Việt có dấu, đúng chính tả. Tuyệt đối không dùng tiếng Anh hay ngôn ngữ khác cho văn bản trong ảnh.";
+
         $requestData = [
             'model' => config('openai.image_model'),
-            'prompt' => $prompt,
+            'prompt' => $finalPrompt,
             'size' => $size,
             'quality' => 'medium',
             'n' => 1,
