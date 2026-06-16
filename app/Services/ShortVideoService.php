@@ -250,6 +250,9 @@ class ShortVideoService
             if($status == 'SUCCEEDED') {
                 $output = $statusResponse->json()['output'][0];
                 $videoContent = file_get_contents($output);
+                if (!file_exists(storage_path('app/public/videos'))) {
+                    mkdir(storage_path('app/public/videos'), 0777, true);
+                }
                 $videoPath = 'videos/' . Str::uuid() . '.mp4';
                 file_put_contents(storage_path('app/public/' . $videoPath), $videoContent);
                 Storage::disk('s3')->put($videoPath, Storage::disk('public')->get($videoPath));
