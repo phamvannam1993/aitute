@@ -580,7 +580,7 @@
                                     />
                                 </label>
                                 <span class="text-sm text-gray-400 self-start inline-block mb-1 italic">
-                    Tải lên file mô tả chi tiết sản phẩm (PDF, Word, Excel, PowerPoint).
+                    Tải lên file mô tả chi tiết sản phẩm (PDF, DOCX, TXT).
                 </span>
                                 <span class="text-sm text-white self-start inline-block mb-1">.</span>
 

@@ -90,7 +90,7 @@
                                                 </label>
                                             </div>
 
-                                            <span class="text-sm md:text-[16px] text-gray-400 self-start inline-block mb-1 italic"> Tải lên file mô tả chi tiết sản phẩm (PDF, Word, Excel, PowerPoint). </span>
+                                            <span class="text-sm md:text-[16px] text-gray-400 self-start inline-block mb-1 italic"> Tải lên file mô tả chi tiết sản phẩm (PDF, DOC, DOCX, TXT). </span>
                                             <span class="text-sm text-white self-start inline-block mb-1">.</span>
                                             <div v-if="tempFormProject?.files?.length > 0" class="flex flex-col items-center border-gray-300 border-2 rounded-[20px] h-fit w-full md:w-[50%] p-4 overflow-hidden">
                                                 <div class="flex flex-col gap-3 h-5/6 w-full overflow-y-scroll">
