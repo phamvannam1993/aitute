@@ -177,24 +177,9 @@ onMounted(() => {
     checkAuthStatus();
 });
 
-const showConfirmFineTune = async () => {
-    try {
-        const response = await axios.get(route("ai-image.has-my-ai-image"));
-        const hasImage = response.data.exists;
-
-        if (hasImage) {
-            window.location.href = route("ai-image.my-ai-image");
-        } else {
-            const hasEnoughCredit = await checkCredit();
-            console.log(hasEnoughCredit);
-            if (!hasEnoughCredit) {
-                return;
-            }
-            isShowConfirmModal.value = !isShowConfirmModal.value;
-        }
-    } catch (error) {
-        console.error("Lỗi khi gọi API:", error);
-    }
+const showConfirmFineTune = () => {
+    // Bỏ popup đào tạo ở trang chủ: vào thẳng trang Thương hiệu cá nhân
+    window.location.href = route("ai-image.my-ai-image");
 };
 
 const checkCredit = async () => {
