@@ -419,28 +419,9 @@ const redirectUrl = (url) => {
 const isAiOtherActive = computed(() => {
     return url.includes("ai-chat") || url.includes("ai-audio") || url.includes("music") || url.includes("song") || url.includes("ai-image") || url.includes("ai-background") || url.includes("video") || url.includes("creatomate") || url.includes("mc-virtual") || url.includes("create-video") || url.includes("lipsync");
 });
-const showConfirmFineTune = async () => {
-    try {
-        isLoading.value = true;
-        const response = await axios.get(route("ai-image.has-my-ai-image"));
-        const hasImage = response.data.exists;
-
-        if (hasImage) {
-            window.location.href = route("ai-image.my-ai-image");
-        } else {
-            const hasEnoughCredit = await checkCredit();
-            console.log(hasEnoughCredit);
-            if (!hasEnoughCredit) {
-                isLoading.value = false;
-                return;
-            }
-            isShowConfirmModal.value = !isShowConfirmModal.value;
-        }
-        isLoading.value = false;
-    } catch (error) {
-        isLoading.value = false;
-        console.error("Lỗi khi gọi API:", error);
-    }
+const showConfirmFineTune = () => {
+    // Bỏ popup đào tạo: vào thẳng trang Thương hiệu cá nhân
+    window.location.href = route("ai-image.my-ai-image");
 };
 
 const handleShowMaintenance = () => {
